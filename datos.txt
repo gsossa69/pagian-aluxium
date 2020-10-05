@@ -1,0 +1,8 @@
+ficha: 2057129
+proyecto: curso de dibujo
+nombre del proyecto: aluxium
+integrantes:
+
+yuliana bedoya
+giancarlo sossa
+flor esmeralda
