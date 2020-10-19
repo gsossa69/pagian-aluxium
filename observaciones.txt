@@ -1,0 +1,6 @@
+-Falta la carpeta con el diseño final
+-El proyecto tiene similitudes con un tutoriales encontrados en youtube, deben cambiar esas secciones.
+-A los elementos del menú principal les faltan estilos.
+-No es del todo responsive.
+-Deben mejorar el diseño del formulario.
+-Los enlaces del menú principal no funcionan.
