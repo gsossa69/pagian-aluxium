@@ -1,4 +1,4 @@
-ficha: 2057129
+ficha: 2057129 y 2057132
 proyecto: curso de dibujo
 nombre del proyecto: aluxium
 integrantes:
@@ -6,3 +6,4 @@ integrantes:
 yuliana bedoya
 giancarlo sossa
 flor esmeralda
+alexandra avendaño
