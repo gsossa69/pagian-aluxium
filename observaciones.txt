@@ -4,3 +4,4 @@
 -No es del todo responsive.
 -Deben mejorar el diseño del formulario.
 -Los enlaces del menú principal no funcionan.
+-Corregir el sistema de columnas
