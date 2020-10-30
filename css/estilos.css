@@ -15,6 +15,10 @@ body {
     font-family: 'open sans';
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .contenedor {
     padding: 60px 0;
     width: 90%;
@@ -23,7 +27,7 @@ body {
     overflow: hidden;
 }
 .contenedor1{
-    padding: 5% 0; */
+    padding: 5% 0;
     width: 100%;
     /* max-width: 1000px; */
     /* margin: auto; */
@@ -60,15 +64,67 @@ nav{
     margin: -80px 10px ;
 }
 
-nav > a{
-    color:#fff;
-    font-weight: 300;
-    text-decoration: none;
-    margin-right: 10px;
+.toggle {
+    width: 40px;
+    height: 35px;
+    position: absolute;
+    right: 4%;
+    top: 6%;
+    display: none;
 }
 
-nav > a:hover{
-    text-decoration: underline;
+.toggle span {
+    width: 40px;
+    height: 3px;
+    background-color: #fff;
+    position: absolute;
+    margin: 16px 0;
+}
+
+.toggle span:before {
+    content: '';
+    width: 40px;
+    height: 3px;
+    background-color: #fff;
+    position: absolute;
+    margin: -10px 0;
+}
+
+.toggle span:after {
+    content: '';
+    width: 40px;
+    height: 3px;
+    background-color: #fff;
+    position: absolute;
+    margin: 10px 0;
+}
+
+nav a{
+    color:#fff;
+    font-weight: 700;
+    text-decoration: none;
+    margin-right: 10px;
+    position: relative;
+}
+
+nav a:before {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: #fff;
+    bottom: 0;
+    left: 0;
+    transition: width .4s ease;
+}
+
+nav a:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+nav a:hover:before {
+    width: 50%;
 }
 
 header .textos-header{
@@ -109,21 +165,27 @@ main .sobre-nosotros{
 }
 
 .tamaño1{
-    width: 90%;
+    width: 50%;
 }
 
-.sobre-nosotros .contenido-textos{
-    width: 50%;
+.sobre-nosotros .contenido-textos {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
 }
 
 .contenido-textos h3{
     margin-bottom: 100px;
 }
 
-.contenido-textos p{
+.contenido-textos p {
     padding: 0px 0px 30px 15px;
     font-weight: 500;
     text-align: justify;
+    width: 50%;
+    display: flex;
+    align-items: center;
 }
 
 /* Galeria */
@@ -186,6 +248,22 @@ background: linear-gradient(to right, #6A82FB, #FC5C7D); /* W3C, IE 10+/ Edge, F
 
 /* Clients */
 
+.cards .card.caja1{ background-color: #E91E63;
+    
+}
+
+.cards .card.caja2{ background-color: #673AB7;
+    
+}
+
+.cards .card.caja3{ background-color: black;
+    
+}
+
+.cards .card.caja4{ background-color: #2196F2;
+    
+}
+
 .cards{
     width: 100%;
     height: 100%;
@@ -195,11 +273,10 @@ background: linear-gradient(to right, #6A82FB, #FC5C7D); /* W3C, IE 10+/ Edge, F
 }
 
 .cards .card{
-    background: #9152da85;
     display: flex;
     flex: 0 0 30%;
    margin: 0 5px 5px 5px;
-    min-width: 300px;
+    min-width: 449px;
     height: 220px;
     align-items: center;
     justify-content: space-evenly;
@@ -250,6 +327,7 @@ background: linear-gradient(to right, #ffffff, #ffffff); /* W3C, IE 10+/ Edge, F
     width: 80%;
     align-items: center;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .servicio-ind img{
@@ -265,13 +343,16 @@ background: linear-gradient(to right, #ffffff, #ffffff); /* W3C, IE 10+/ Edge, F
     font-size: 18px;
     text-align: justify;
     padding: 0 11px;
+    width: 50%;
 }
 
 .fondo {width: 100%;
     height: 100vh;
     padding-top: 150px;
     align-content: center;
-    background-image: url(../img/Fondo.jpg);}
+    background: #111 url(../img/Fondo.jpg);
+    background-blend-mode: soft-light;
+}
 
 /* footer */
 
@@ -315,6 +396,94 @@ footer{
     color: #ffffffef;
 }
 
+/* Estilos Yeison */
+
+/*animaciones*/
+#acerca,#temas,#cursos,#fundadores{opacity: 0; transform: translateX(-45px);transition: .5s ease-in-out;}
+#acerca.in-out,#temas.in-out,#cursos.in-out,#fundadores.in-out{opacity: 1; transform: translateX(0px);}
+
+.tt_form input, .tt_form textarea {
+    background-color: transparent;
+    border: unset;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.562);
+    border-radius: 0px !important;
+    color: #fff;
+    font-weight: 500;
+    transition: .4s ease-in-out;
+}
+
+.tt_form input:focus, .tt_form textarea:focus {
+    background-color: rgba(255, 255, 255, 0.123);
+    outline: none;
+}
+
+.tt_form_ckb button {
+    color: #fff;
+    font-weight: 600;
+    transition: .4s ease;
+}
+
+@media (max-width: 768px){
+    nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 40vh;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        z-index: 10;
+    }
+
+    nav a {
+        font-size: 20px;
+        padding: 5px 0;
+    }
+
+    .toggle {
+        display: block;
+        z-index: 12222;
+    }
+
+    .items {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+
+    .items.anim {
+        display: flex;
+        background-color: #222;
+    }
+
+    .contenido-textos p {
+        padding: 0px 0px 30px 15px;
+        font-weight: 500;
+        text-align: center;
+    }
+
+    .titulo {
+        margin-bottom: 30px;
+    }
+
+    .cards .card {
+        margin: 0 10px 10px 0px;
+        min-width: unset;
+        padding: 1rem;
+    }
+
+    .servicio-ind p {
+        width: 100%;
+    }
+}
+
+/* Estilos Yeison */
+
 
 @media screen and (max-width:900px){
     header{
@@ -328,6 +497,15 @@ footer{
     }
 
     .sobre-nosotros .contenido-textos{
+        width: 100%;
+    }
+
+    .contenido-textos p {
+        width: 100%;
+    }
+
+    
+    .tamaño1{
         width: 100%;
     }
 
@@ -372,13 +550,13 @@ footer{
 
     .servicio-ind img{
         width: 90%;
+        margin: 0 auto;
     }
 }
 
 @media screen and (max-width:500px){
     nav{
         text-align: center;
-        padding: 30px 0 0 0;
     }
 
     nav > a{
@@ -431,7 +609,6 @@ footer{
     
     .fondo{
         width: 100%;
-        background-color: red;
     }
     
     /* Footer */
@@ -477,9 +654,9 @@ footer{
     font-size: em;
     }
     /* cuestionario*/
-    form.tt_form {
+    form.tt_form, textarea {
     width: 50%;
-    height: auto
+    height: auto;
     min-width: 350px;
     }
 input, textarea{
@@ -504,4 +681,7 @@ input, textarea{
     margin-top: 20px    
 }
 
+input, textarea {
+    margin: 15px 0 !important;
+}
     
